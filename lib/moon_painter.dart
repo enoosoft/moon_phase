@@ -8,35 +8,34 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
 import 'moon_phase.dart';
+import 'moon_widget.dart';
 
 class MoonPainter extends CustomPainter {
-  double radius;
-  final Color moonColor = Colors.amber;
-  final Color earthshineColor = Colors.black87;
-
+  MoonWidget moonWidget;
   final Paint paintDark = Paint();
   final Paint paintLight = Paint();
   final MoonPhase moon = MoonPhase();
-  DateTime date = DateTime.now();
 
-  MoonPainter({required this.date, this.radius = 96});
+  MoonPainter({required this.moonWidget});
 
   @override
   void paint(Canvas canvas, Size size) {
+    double radius = moonWidget.resolution;
+
     int width = radius.toInt() * 2;
     int height = radius.toInt() * 2;
-    double phaseAngle = moon.getPhaseAngle(date);
+    double phaseAngle = moon.getPhaseAngle(moonWidget.date);
 
     double xcenter = 0;
     double ycenter = 0;
 
     try {
-      paintLight.color = moonColor;
+      paintLight.color = moonWidget.moonColor;
       //달의 색깔로 전체 원을 그린다
       canvas.drawCircle(const Offset(0, 1), radius, paintLight);
     } catch (e) {
       radius = min(width, height) * 0.4;
-      paintLight.color = moonColor;
+      paintLight.color = moonWidget.moonColor;
       Rect oval = Rect.fromLTRB(xcenter - radius, ycenter - radius,
           xcenter + radius, ycenter + radius);
       canvas.drawOval(oval, paintLight);
@@ -52,7 +51,7 @@ class MoonPainter extends CustomPainter {
     }
 
     //이제 어두운 면을 그려야 한다.
-    paintDark.color = earthshineColor;
+    paintDark.color = moonWidget.earthshineColor;
 
     double cosTerm = cos(positionAngle);
 

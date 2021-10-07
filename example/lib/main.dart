@@ -1,8 +1,4 @@
 import 'package:flutter/material.dart';
-import 'dart:async';
-
-import 'package:flutter/services.dart';
-import 'package:moon_phase/moon_phase.dart';
 import 'package:moon_phase/moon_widget.dart';
 
 void main() {
@@ -30,14 +26,32 @@ class _MyAppState extends State<MyApp> {
           title: const Text('MoonWidget example app'),
         ),
         body: Center(
-          child: SizedBox(
-            child: MoonWidget(
-              date: DateTime.now().add(const Duration(days: 5)),
-              scale: 1,
+          child: Padding(
+            padding: const EdgeInsets.all(10),
+            child: Wrap(
+              direction: Axis.horizontal,
+              children: _moonPhases(),
             ),
           ),
         ),
       ),
     );
+  }
+
+  _moonPhases() {
+    var _list = <Widget>[];
+    for (int i = 0; i < 40; i++) {
+      _list.add(
+        MoonWidget(
+          date: DateTime.now().add(Duration(days: i)),
+          resolution: 128,
+          size: 64,
+          scale: 0.2,
+          moonColor: Colors.amber,
+          earthshineColor: Colors.blueGrey.shade900,
+        ),
+      );
+    }
+    return _list;
   }
 }
