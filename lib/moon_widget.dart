@@ -1,8 +1,3 @@
-library moon_phase;
-
-export 'moon_painter.dart' show MoonPainter;
-export 'moon_phase.dart' show MoonPhase;
-
 import 'package:flutter/material.dart';
 import 'moon_painter.dart';
 

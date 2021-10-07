@@ -1,3 +1,8 @@
+library moon_phase;
+
+export 'moon_painter.dart' show MoonPainter;
+export 'moon_widget.dart' show MoonWidget;
+
 import 'dart:math';
 
 class MoonPhase {
