@@ -1,15 +1,17 @@
 # moon_phase
 
-A new flutter plugin project.
+Flutter plugin that creates a moon widget according to the moon's phase.
 
 ## Getting Started
+- Just add the moon widget as below, the widget according to the moon phase will be displayed there.
+```dart
+SizedBox(
+    child: MoonWidget(
+        date: DateTime.now().add(const Duration(days: 5)),
+        scale: 1,
+    ),
+),
 
-This project is a starting point for a Flutter
-[plug-in package](https://flutter.dev/developing-packages/),
-a specialized package that includes platform-specific implementation code for
-Android and/or iOS.
+- like this.
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
 
