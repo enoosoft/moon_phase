@@ -14,6 +14,4 @@ SizedBox(
 ```
 
 - like this.
-
-
-
+![Screenshot_1633614082](https://user-images.githubusercontent.com/68217334/136396376-bd536827-03ef-4c3b-9de7-03d8b6d8fa3e.png)
