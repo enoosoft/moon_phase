@@ -1,9 +1,9 @@
 # moon_phase
 
-Flutter plugin that creates a moon widget according to the moon's phase.
+Flutter plugin that creates moon widgets according to the moon's phase.
 
 ## Getting Started
-- Just add the moon widget and put in all the `DateTime` you want. Then, draw the phase of the moon.
+- Just add the `MoonWidget` and put in all the `DateTime` you want. Then, draw the phase of the moon.
 ```dart
         MoonWidget(
           date: DateTime.now(),
