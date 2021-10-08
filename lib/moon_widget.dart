@@ -2,17 +2,26 @@ import 'package:flutter/material.dart';
 import 'moon_painter.dart';
 
 class MoonWidget extends StatelessWidget {
+  ///DateTime to show.
+  ///Even hour, minutes, and seconds are calculated for MoonWidget
   final DateTime date;
 
-  ///Determine the size of the moon widget container
+  ///Decide the container size for the MoonWidget
   final double size;
 
-  ///Adjust the size. 1 is resolution x 2.
+  ///Transform the size. 1.0 is resolution(=radius) x 2.
   final double scale;
 
-  ///resolution will be the moon radius
+  ///Resolution will be the moon radius.
+  ///Large resolution needs more math operation makes widget heavy.
+  ///Enter a small number if it is sufficient to mark it small,
+  ///such as an icon or marker.
   final double resolution;
+
+  ///Color of light side of moon
   final Color moonColor;
+
+  ///Color of dark side of moon
   final Color earthshineColor;
 
   const MoonWidget({

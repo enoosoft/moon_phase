@@ -40,13 +40,13 @@ class _MyAppState extends State<MyApp> {
 
   _moonPhases() {
     var _list = <Widget>[];
-    for (int i = 0; i < 40; i++) {
+    for (int i = 0; i < 60; i++) {
       _list.add(
         MoonWidget(
-          date: DateTime.now().add(Duration(days: i)),
+          date: DateTime.now().add(Duration(hours: i * 12)),
           resolution: 128,
-          size: 64,
-          scale: 0.2,
+          size: 55,
+          scale: 0.18,
           moonColor: Colors.amber,
           earthshineColor: Colors.blueGrey.shade900,
         ),
