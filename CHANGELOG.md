@@ -1,3 +1,5 @@
+## 1.0.0+4
+* Update sample app
 ## 1.0.0+2
 * Enable platform web
 ## 1.0.0+1
