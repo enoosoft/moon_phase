@@ -51,4 +51,10 @@ such as an icon or marker.
 - Color of light side of the moon
 
 #### **earthshineColor**
-- Color of dark side of the moon.
+- Color of dark side of the moon.   
+
+---
+## About
+
+- Publisher - [enoosoft](https://github.com/enoosoft)   
+- This project converted from Java([Audrius Meskauskas's MoonView](https://github.com/andviane/moon.git)) to Dart.
