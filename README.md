@@ -18,13 +18,12 @@ Just add the `MoonWidget` and put in all the `DateTime` you want. Then, draw the
 ```
 
 like this.  
-
-<img src="https://user-images.githubusercontent.com/68217334/136396376-bd536827-03ef-4c3b-9de7-03d8b6d8fa3e.png" alt="example app" width="300"/>
+<img src="https://user-images.githubusercontent.com/68217334/136544208-f1c8b8bb-bd64-4225-8157-c6eae9a63e56.png" alt="example app" width="300"/>
 
 
 Yes, this is cool!    
    
-   
+<br><br>   
 ## Usage
 
 #### `date`
