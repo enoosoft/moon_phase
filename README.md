@@ -7,9 +7,9 @@ Flutter plugin that creates moon widgets according to the moon's phase.
 Just add the `MoonWidget` and put in every single `DateTime` you want see. Then, the phase of the moon will be display.
 
 ```dart
-        MoonWidget(
-          date: DateTime.now(),
-        ),
+  MoonWidget(
+    date: DateTime.now(),
+  ),
 ```
 
 This is the [example app](https://pub.dev/packages/moon_phase/example) that shows the shape of the moon every 12 hours for 30 days.
@@ -23,14 +23,14 @@ Yes, this is cool!
 ## Learn More
 
 ```dart
-        MoonWidget(
-          date: DateTime.now(),
-          resolution: 128,
-          size: 64,
-          scale: 0.2,
-          moonColor: Colors.amber,
-          earthshineColor: Colors.blueGrey.shade900,
-        ),
+  MoonWidget(
+    date: DateTime.now(),
+    resolution: 128,
+    size: 64,
+    scale: 0.2,
+    moonColor: Colors.amber,
+     earthshineColor: Colors.blueGrey.shade900,
+  ),
 ```   
 #### **date**
 - DateTime to show.   
