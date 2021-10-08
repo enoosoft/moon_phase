@@ -4,7 +4,7 @@ Flutter plugin that creates moon widgets according to the moon's phase.
 
 ## Getting Started
 
-Just add the `MoonWidget` and put in every single `DateTime`s you want. Then, the phase of the moon will be marked.
+Just add the `MoonWidget` and put in every single `DateTime`s you want see. Then, the phase of the moon will be display.
 
 ```dart
         MoonWidget(
@@ -23,18 +23,18 @@ like this.
 
 
 Yes, this is cool!    
-   
-<br>    
+<br>
+    
 ## Usage   
 #### `date`
 DateTime to show.   
-Even hour, minutes, and seconds are calculated for MoonWidget
+Hour, minutes, and seconds are calculated for MoonWidget.  
+
 #### `resolution`
 Resolution will be the moon radius.   
 Large resolution needs more math operation makes widget heavy.   
 Enter a small number if it is sufficient to mark it small,   
-such as an icon or marker.
-
+such as an icon or marker.   
 
 #### `size`
 Decide the container size for the MoonWidget
