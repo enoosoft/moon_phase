@@ -17,15 +17,15 @@ Just add the `MoonWidget` and put in every single `DateTime`s you want. Then, th
         ),
 ```
 
-like this.  
+like this.   
+
 <img src="https://user-images.githubusercontent.com/68217334/136544208-f1c8b8bb-bd64-4225-8157-c6eae9a63e56.png" alt="example app" width="300"/>
 
 
 Yes, this is cool!    
    
-<br><br>   
-## Usage
-
+<br>    
+## Usage   
 #### `date`
 DateTime to show.   
 Even hour, minutes, and seconds are calculated for MoonWidget
