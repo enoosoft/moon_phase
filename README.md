@@ -14,8 +14,7 @@ Just add the `MoonWidget` and put in every single `DateTime` you want see. Then,
 
 This is the [example app](https://pub.dev/packages/moon_phase/example) that shows the shape of the moon every 12 hours for 30 days.
 
-<img src="https://user-images.githubusercontent.com/68217334/136544208-f1c8b8bb-bd64-4225-8157-c6eae9a63e56.png" alt="example app" width="250"/>
-
+<img src="https://user-images.githubusercontent.com/68217334/136664443-31639f81-9e5d-4ca9-a26f-2abc2b408aad.png" alt="example app" width="250"/>
 
 Yes, this is cool!    
 <br>
