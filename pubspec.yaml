@@ -1,6 +1,6 @@
 name: moon_phase
 description: Flutter plugin that creates moon widgets according to the moon's phase. 
-version: 1.0.0+6
+version: 1.0.0+7
 homepage: https://github.com/enoosoft/moon_phase
 
 environment:

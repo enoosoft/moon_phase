@@ -23,7 +23,7 @@ class MoonPhase {
   // Equation from Meeus eqn. 46.4.
   double getPhaseAngle(DateTime date) {
     // Time measured in Julian centuries from epoch J2000.0:
-    DateTime tEpoch = DateTime(2000, 1, 1);
+    DateTime tEpoch = DateTime(2000, 1, 1, 12);
     double t = (decimalYears(date) - decimalYears(tEpoch)) / 100.0;
     double t2 = t * t;
     double t3 = t2 * t;

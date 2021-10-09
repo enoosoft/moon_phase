@@ -60,10 +60,10 @@ class MoonPainter extends CustomPainter {
 
     for (int j = 0; j < radius; ++j) {
       double rrf = sqrt(rsquared - j * j);
-      double rr = rrf + 0.5;
+      double rr = rrf;
       double xx = rrf * cosTerm;
       double x1 = xcenter - (whichQuarter < 2 ? rr : xx);
-      double w = rr + xx + 1;
+      double w = rr + xx;
       canvas.drawRect(
           Rect.fromLTRB(x1, ycenter - j, w + x1, ycenter - j + 2), paintDark);
       canvas.drawRect(

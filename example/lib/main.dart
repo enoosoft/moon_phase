@@ -27,7 +27,7 @@ class _MyAppState extends State<MyApp> {
         ),
         body: Center(
           child: Padding(
-            padding: const EdgeInsets.all(10),
+            padding: const EdgeInsets.all(30.0),
             child: Wrap(
               direction: Axis.horizontal,
               children: _moonPhases(),
@@ -40,13 +40,13 @@ class _MyAppState extends State<MyApp> {
 
   _moonPhases() {
     var _list = <Widget>[];
-    for (int i = 0; i < 60; i++) {
+    for (int i = 0; i < 30 * (24 / 12); i++) {
       _list.add(
         MoonWidget(
-          date: DateTime.now().add(Duration(hours: i * 12)),
+          date: DateTime(2021, 10, 6, 5).add(Duration(hours: i * 12)),
           resolution: 128,
-          size: 55,
-          scale: 0.18,
+          size: 54,
+          scale: 0.185,
           moonColor: Colors.amber,
           earthshineColor: Colors.blueGrey.shade900,
         ),
