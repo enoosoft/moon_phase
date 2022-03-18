@@ -26,7 +26,6 @@ Yes, this is cool!
     date: DateTime.now(),
     resolution: 128,
     size: 64,
-    scale: 0.2,
     moonColor: Colors.amber,
     earthshineColor: Colors.blueGrey.shade900,
   ),
@@ -42,15 +41,13 @@ Enter a small number if it is sufficient to mark it small,
 such as an icon or marker.   
 
 #### **size**
-- Decide the container size for the MoonWidget
-
-#### **scale**
-- Transform the size. 1.0 is resolution(=radius) x 2.   
+- Set size for the MoonWidget
+ 
 #### **moonColor**
 - Color of light side of the moon
 
 #### **earthshineColor**
-- Color of dark side of the moon.   
+- Color of dark side.   
 
 ---
 ## About

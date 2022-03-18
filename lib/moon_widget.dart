@@ -9,9 +9,6 @@ class MoonWidget extends StatelessWidget {
   ///Decide the container size for the MoonWidget
   final double size;
 
-  ///Transform the size. 1.0 is resolution(=radius) x 2.
-  final double scale;
-
   ///Resolution will be the moon radius.
   ///Large resolution needs more math operation makes widget heavy.
   ///Enter a small number if it is sufficient to mark it small,
@@ -28,7 +25,6 @@ class MoonWidget extends StatelessWidget {
     Key? key,
     required this.date,
     this.size = 36,
-    this.scale = 0.22,
     this.resolution = 96,
     this.moonColor = Colors.amber,
     this.earthshineColor = Colors.black87,
@@ -40,7 +36,7 @@ class MoonWidget extends StatelessWidget {
       width: size,
       height: size,
       child: Transform.scale(
-        scale: scale,
+        scale: size / (resolution * 2),
         child: CustomPaint(
           painter: MoonPainter(moonWidget: this),
         ),

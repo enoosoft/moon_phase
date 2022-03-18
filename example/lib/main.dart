@@ -29,6 +29,8 @@ class _MyAppState extends State<MyApp> {
           child: Padding(
             padding: const EdgeInsets.all(30.0),
             child: Wrap(
+              spacing: 10,
+              runSpacing: 10,
               direction: Axis.horizontal,
               children: _moonPhases(),
             ),
@@ -44,9 +46,8 @@ class _MyAppState extends State<MyApp> {
       _list.add(
         MoonWidget(
           date: DateTime(2021, 10, 6, 5).add(Duration(hours: i * 12)),
-          resolution: 128,
-          size: 54,
-          scale: 0.185,
+          resolution: 64,
+          size: 48,
           moonColor: Colors.amber,
           earthshineColor: Colors.blueGrey.shade900,
         ),
