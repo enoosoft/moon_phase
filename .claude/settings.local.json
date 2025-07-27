@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(java:*)",
+      "Bash(flutter:*)",
+      "Bash(rm:*)",
+      "Bash(chmod:*)",
+      "Bash(python3:*)",
+      "Bash(convert:*)",
+      "Bash(magick:*)"
+    ],
+    "deny": []
+  }
+}

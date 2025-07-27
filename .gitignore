@@ -6,3 +6,24 @@
 .pub/
 
 build/
+
+# Debug logs
+debug.log
+
+# IDE settings
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# Temporary files
+*.tmp
+*.temp
+*.log
+*.swp
+*.swo
+*~
+
+# OS generated files
+Thumbs.db
+Desktop.ini
