@@ -2,6 +2,11 @@
 
 Flutter plugin that creates moon widgets according to the moon's phase.
 
+<p float="left">
+  <img src="example/screenshots/example_app_001.jpeg" width="250" />
+  <img src="example/screenshots/example_app_002.jpeg" width="250" />
+</p>
+
 ## Usage
 
 ### Simple (solid colors)
