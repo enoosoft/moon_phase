@@ -7,6 +7,9 @@
 
 build/
 
+# CLAUDE files
+CLAUDE.md
+
 # Debug logs
 debug.log
 
@@ -27,3 +30,6 @@ debug.log
 # OS generated files
 Thumbs.db
 Desktop.ini
+
+# PR folder
+pr/

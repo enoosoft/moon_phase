@@ -11,33 +11,31 @@ import 'moon_phase.dart';
 
 class MoonPainter extends CustomPainter {
   MoonWidget moonWidget;
-  final Paint paintDark = Paint();
-  final Paint paintLight = Paint();
+  final bool shadowOnly;
+  final Paint paintDark = Paint()..isAntiAlias = true;
+  final Paint paintLight = Paint()..isAntiAlias = true;
   final MoonPhase moon = MoonPhase();
 
-  MoonPainter({required this.moonWidget});
+  MoonPainter({required this.moonWidget, this.shadowOnly = false});
 
   @override
   void paint(Canvas canvas, Size size) {
-    double radius = moonWidget.resolution;
+    // Use the size parameter to get the center of the canvas
+    double xcenter = size.width / 2;
+    double ycenter = size.height / 2;
+    // Apply shadowRatio to radius
+    double radius = min(size.width, size.height) / 2 * moonWidget.shadowRatio;
+    double pixelSize = moonWidget.pixelSize;
 
-    int width = radius.toInt() * 2;
-    int height = radius.toInt() * 2;
     double phaseAngle = moon.getPhaseAngle(moonWidget.date);
 
-    double xcenter = 0;
-    double ycenter = 0;
+    // Update the color settings
+    paintLight.color = moonWidget.moonColor;
+    paintDark.color = moonWidget.earthshineColor;
 
-    try {
-      paintLight.color = moonWidget.moonColor;
-      //달의 색깔로 전체 원을 그린다
-      canvas.drawCircle(const Offset(0, 1), radius, paintLight);
-    } catch (e) {
-      radius = min(width, height) * 0.4;
-      paintLight.color = moonWidget.moonColor;
-      Rect oval = Rect.fromLTRB(xcenter - radius, ycenter - radius,
-          xcenter + radius, ycenter + radius);
-      canvas.drawOval(oval, paintLight);
+    // Draw the full moon as a light circle (skip if shadowOnly mode)
+    if (!shadowOnly) {
+      canvas.drawCircle(Offset(xcenter, ycenter), radius, paintLight);
     }
 
     ///위상각은 태양 - 달 - 지구의 각도다.
@@ -49,24 +47,22 @@ class MoonPainter extends CustomPainter {
       positionAngle += 2.0 * pi;
     }
 
-    //이제 어두운 면을 그려야 한다.
-    paintDark.color = moonWidget.earthshineColor;
-
+    // Calculate the shadow
     double cosTerm = cos(positionAngle);
-
     double rsquared = radius * radius;
     double whichQuarter = ((positionAngle * 2.0 / pi) + 4) % 4;
 
-    for (int j = 0; j < radius; ++j) {
+    // Draw the shadow on the moon
+    double halfPixel = pixelSize / 2;
+    for (double j = -radius; j <= radius; j += pixelSize) {
       double rrf = sqrt(rsquared - j * j);
       double rr = rrf;
       double xx = rrf * cosTerm;
       double x1 = xcenter - (whichQuarter < 2 ? rr : xx);
       double w = rr + xx;
+
       canvas.drawRect(
-          Rect.fromLTRB(x1, ycenter - j, w + x1, ycenter - j + 2), paintDark);
-      canvas.drawRect(
-          Rect.fromLTRB(x1, ycenter + j, w + x1, ycenter + j + 2), paintDark);
+          Rect.fromLTRB(x1, ycenter + j - halfPixel, x1 + w, ycenter + j + halfPixel), paintDark);
     }
   }
 

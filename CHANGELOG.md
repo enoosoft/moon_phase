@@ -1,3 +1,11 @@
+## 1.1.0
+* **BREAKING**: Remove `resolution` parameter (now uses `size` directly)
+* Add `pixelSize` parameter for shadow rendering precision
+* Add `shadowRatio` parameter for image mode
+* Add `MoonWidget.simple()` and `MoonWidget.image()` constructors
+* Support background image with shadow overlay
+* Update flutter_lints to 6.0.0
+
 ## 1.0.2+9
 * Update Android build configuration for modern Flutter compatibility
 * Upgrade Gradle to 8.5 and AGP to 8.3.0
