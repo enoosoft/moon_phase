@@ -1,3 +1,7 @@
+## 1.1.1
+* Add example screenshots to README
+* Add acknowledgements section
+
 ## 1.1.0
 * **BREAKING**: Remove `resolution` parameter (now uses `size` directly)
 * Add `pixelSize` parameter for shadow rendering precision
