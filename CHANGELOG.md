@@ -1,3 +1,6 @@
+## 1.1.2
+* Fix code formatting
+
 ## 1.1.1
 * Add example screenshots to README
 * Add acknowledgements section

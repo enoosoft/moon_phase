@@ -62,7 +62,9 @@ class MoonPainter extends CustomPainter {
       double w = rr + xx;
 
       canvas.drawRect(
-          Rect.fromLTRB(x1, ycenter + j - halfPixel, x1 + w, ycenter + j + halfPixel), paintDark);
+          Rect.fromLTRB(
+              x1, ycenter + j - halfPixel, x1 + w, ycenter + j + halfPixel),
+          paintDark);
     }
   }
 
