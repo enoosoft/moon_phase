@@ -37,6 +37,10 @@ MoonWidget.image(
 | `backgroundImageAsset` | Background image path (image mode) |
 | `shadowRatio` | Shadow radius ratio 0.0~1.0 (image mode) |
 
+## Acknowledgements
+
+- [bksubhuti](https://github.com/bksubhuti) - Background image overlay idea
+
 ## About
 
 - Publisher - [enoosoft](https://github.com/enoosoft)
