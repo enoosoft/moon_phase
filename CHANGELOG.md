@@ -1,3 +1,6 @@
+## 1.1.3
+* Add Swift Package Manager support for iOS
+
 ## 1.1.2
 * Fix code formatting
 
