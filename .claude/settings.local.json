@@ -7,7 +7,8 @@
       "Bash(chmod:*)",
       "Bash(python3:*)",
       "Bash(convert:*)",
-      "Bash(magick:*)"
+      "Bash(magick:*)",
+      "Bash(dart analyze *)"
     ],
     "deny": []
   }

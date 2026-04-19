@@ -2,6 +2,7 @@ library moon_phase;
 
 export 'moon_painter.dart' show MoonPainter;
 export 'moon_widget.dart' show MoonWidget;
+export 'moon_phase_name.dart' show MoonPhaseName, MoonPhaseNameX, MoonLabelPosition;
 
 import 'dart:math';
 
