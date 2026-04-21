@@ -11,6 +11,9 @@ build/
 CLAUDE.md
 .claude/settings.local.json
 
+# Markdown preview artifacts (VS Code extensions can generate these)
+README.html
+
 # Debug logs
 debug.log
 
