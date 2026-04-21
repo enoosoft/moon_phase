@@ -1,3 +1,7 @@
+## 1.2.1
+* Add "Used in" link to README (천문달력 / Astronomy Calendar)
+* Fix README screenshots not rendering on pub.dev (use absolute GitHub raw URLs)
+
 ## 1.2.0
 * Add phase label support to `MoonWidget` via `labelPosition`, `phaseLabels`, `labelStyle`, `labelSpacing`
 * Add `MoonPhaseName` enum (8 standard lunar phases) with `fromAngle` derivation

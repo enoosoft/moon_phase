@@ -2,10 +2,10 @@
 
 Flutter plugin that creates moon widgets according to the moon's phase.
 
-<p float="left">
-  <img src="example/screenshots/example_app_001.jpeg" width="250" />
-  <img src="example/screenshots/example_app_002.jpeg" width="250" />
-  <img src="example/screenshots/example_app_003.jpeg" width="250" />
+<p align="left">
+  <img src="https://raw.githubusercontent.com/enoosoft/moon_phase/master/example/screenshots/example_app_001.jpeg" width="250" />
+  <img src="https://raw.githubusercontent.com/enoosoft/moon_phase/master/example/screenshots/example_app_002.jpeg" width="250" />
+  <img src="https://raw.githubusercontent.com/enoosoft/moon_phase/master/example/screenshots/example_app_003.jpeg" width="250" />
 </p>
 
 ## Usage
@@ -67,4 +67,5 @@ Pass `phaseLabels` to inject localized strings; missing keys fall back to
 ## About
 
 - Publisher - [enoosoft](https://github.com/enoosoft)
+- Used in - [천문달력 (Astronomy Calendar)](https://apps.apple.com/us/app/id1592216707) · [Google Play](https://play.google.com/store/apps/details?id=com.enoo.astc)
 - Reference - [Audrius Meskauskas's MoonView](https://github.com/andviane/moon.git)
