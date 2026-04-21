@@ -1,3 +1,11 @@
+## 1.2.0
+* Add phase label support to `MoonWidget` via `labelPosition`, `phaseLabels`, `labelStyle`, `labelSpacing`
+* Add `MoonPhaseName` enum (8 standard lunar phases) with `fromAngle` derivation
+* Add `MoonLabelPosition` enum (top/bottom/left/right)
+* Modernize iOS example project for Flutter standards and iOS 13.0 minimum
+
+Thanks to @guillotnico for the feature contribution in #4.
+
 ## 1.1.3
 * Add Swift Package Manager support for iOS
 

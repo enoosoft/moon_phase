@@ -9,6 +9,7 @@ build/
 
 # CLAUDE files
 CLAUDE.md
+.claude/settings.local.json
 
 # Debug logs
 debug.log
@@ -33,3 +34,7 @@ Desktop.ini
 
 # PR folder
 pr/
+
+# Local scripts
+scripts/
+temp/

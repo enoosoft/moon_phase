@@ -38,10 +38,9 @@ class MoonPainter extends CustomPainter {
       canvas.drawCircle(Offset(xcenter, ycenter), radius, paintLight);
     }
 
-    ///위상각은 태양 - 달 - 지구의 각도다.
-    ///따라서 0 = full phase, 180 = new
-    ///우리가 필요한 것은 일출 터미네이터의 위치 각도(태양 - 지구 - 달)다.
-    ///위상각과 반대 방향이기 때문에 변환해야한다.
+    // Phase angle (Sun-Moon-Earth): 0 = full, π = new.
+    // We need the terminator position angle (Sun-Earth-Moon), which is the                                                             
+    // supplement of phase angle — hence the pi - x conversion below.
     double positionAngle = pi - phaseAngle;
     if (positionAngle < 0.0) {
       positionAngle += 2.0 * pi;

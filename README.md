@@ -5,6 +5,7 @@ Flutter plugin that creates moon widgets according to the moon's phase.
 <p float="left">
   <img src="example/screenshots/example_app_001.jpeg" width="250" />
   <img src="example/screenshots/example_app_002.jpeg" width="250" />
+  <img src="example/screenshots/example_app_003.jpeg" width="250" />
 </p>
 
 ## Usage
@@ -30,6 +31,18 @@ MoonWidget.image(
 )
 ```
 
+### With phase label
+```dart
+MoonWidget.simple(
+  date: DateTime.now(),
+  size: 64,
+  labelPosition: MoonLabelPosition.bottom,
+  labelStyle: TextStyle(fontSize: 12),
+)
+```
+Pass `phaseLabels` to inject localized strings; missing keys fall back to
+`MoonPhaseNameX.defaultLabels` (English).
+
 ## Parameters
 
 | Parameter | Description |
@@ -41,10 +54,15 @@ MoonWidget.image(
 | `earthshineColor` | Dark side color |
 | `backgroundImageAsset` | Background image path (image mode) |
 | `shadowRatio` | Shadow radius ratio 0.0~1.0 (image mode) |
+| `labelPosition` | Label placement: top / bottom / left / right. `null` = no label |
+| `phaseLabels` | Map<MoonPhaseName, String> for i18n; falls back to defaults when a key is missing |
+| `labelStyle` | TextStyle applied to the label |
+| `labelSpacing` | Gap in logical pixels between moon and label (default 4) |
 
 ## Acknowledgements
 
 - [bksubhuti](https://github.com/bksubhuti) - Background image overlay idea
+- [guillotnico](https://github.com/guillotnico) - Phase label support (#4)
 
 ## About
 

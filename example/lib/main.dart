@@ -146,19 +146,9 @@ final _phaseDates = [
   DateTime(2021, 11, 1, 12),  // Waning Crescent
 ];
 
-/// Labels resolved by the app's i18n system at build time.
-/// In a real app, replace these strings with whatever your localization
-/// system returns (flutter_localizations, easy_localization, etc.).
-const Map<MoonPhaseName, String> _phaseLabels = {
-  MoonPhaseName.newMoon: 'phase_new_moon',
-  MoonPhaseName.waxingCrescent: 'phase_waxing_crescent',
-  MoonPhaseName.firstQuarter: 'phase_first_quarter',
-  MoonPhaseName.waxingGibbous: 'phase_waxing_gibbous',
-  MoonPhaseName.fullMoon: 'phase_full_moon',
-  MoonPhaseName.waningGibbous: 'phase_waning_gibbous',
-  MoonPhaseName.lastQuarter: 'phase_last_quarter',
-  MoonPhaseName.waningCrescent: 'phase_waning_crescent',
-};
+// Labels fall back to MoonPhaseNameX.defaultLabels (English) here.
+// Pass `phaseLabels: yourMap` to MoonWidget to inject localized strings
+// from flutter_localizations, easy_localization, etc.
 
 class MoonPhasesLabels extends StatefulWidget {
   const MoonPhasesLabels({Key? key}) : super(key: key);
@@ -212,7 +202,6 @@ class _MoonPhasesLabelsState extends State<MoonPhasesLabels> {
                                     moonColor: Colors.amber,
                                     earthshineColor: Colors.blueGrey.shade900,
                                     labelPosition: _position,
-                                    phaseLabels: _phaseLabels,
                                     labelSpacing: 8,
                                     labelStyle: TextStyle(fontSize: _fontSize),
                                   ),
@@ -230,7 +219,6 @@ class _MoonPhasesLabelsState extends State<MoonPhasesLabels> {
                                   moonColor: Colors.amber,
                                   earthshineColor: Colors.blueGrey.shade900,
                                   labelPosition: _position,
-                                  phaseLabels: _phaseLabels,
                                   labelStyle: TextStyle(fontSize: _fontSize),
                                 ))
                             .toList(),
@@ -253,7 +241,6 @@ class _MoonPhasesLabelsState extends State<MoonPhasesLabels> {
                                     shadowRatio: 0.827,
                                     earthshineColor: Colors.black87,
                                     labelPosition: _position,
-                                    phaseLabels: _phaseLabels,
                                     labelSpacing: 8,
                                     labelStyle: TextStyle(fontSize: _fontSize),
                                   ),
@@ -272,7 +259,6 @@ class _MoonPhasesLabelsState extends State<MoonPhasesLabels> {
                                   shadowRatio: 0.827,
                                   earthshineColor: Colors.black87,
                                   labelPosition: _position,
-                                  phaseLabels: _phaseLabels,
                                   labelStyle: TextStyle(fontSize: _fontSize),
                                 ))
                             .toList(),
@@ -370,7 +356,7 @@ class _SliderRow extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        SizedBox(width: 36, child: Text(label)),
+        SizedBox(width: 48, child: Text(label)),
         Expanded(
           child: Slider(
             value: value,
