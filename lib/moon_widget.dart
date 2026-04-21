@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'moon_painter.dart';
+import 'moon_phase.dart';
 
 class MoonWidget extends StatelessWidget {
   ///DateTime to show.
@@ -28,6 +28,27 @@ class MoonWidget extends StatelessWidget {
   ///Defaults to 1.0.
   final double shadowRatio;
 
+  /// Where to display the phase label relative to the moon. Null = no label.
+  final MoonLabelPosition? labelPosition;
+
+  /// Translated phase name strings keyed by [MoonPhaseName].
+  /// Falls back to built-in English labels for any missing key.
+  /// Pass your own i18n strings here:
+  /// ```dart
+  /// phaseLabels: {
+  ///   MoonPhaseName.newMoon: AppLocalizations.of(context)!.newMoon,
+  ///   MoonPhaseName.fullMoon: AppLocalizations.of(context)!.fullMoon,
+  ///   // …
+  /// }
+  /// ```
+  final Map<MoonPhaseName, String>? phaseLabels;
+
+  /// Optional style for the phase label text.
+  final TextStyle? labelStyle;
+
+  /// Spacing between the moon widget and the label.
+  final double labelSpacing;
+
   const MoonWidget({
     Key? key,
     required this.date,
@@ -37,6 +58,10 @@ class MoonWidget extends StatelessWidget {
     this.earthshineColor = Colors.black87,
     this.backgroundImageAsset,
     this.shadowRatio = 1.0,
+    this.labelPosition,
+    this.phaseLabels,
+    this.labelStyle,
+    this.labelSpacing = 4.0,
   }) : super(key: key);
 
   /// Simple moon with solid colors
@@ -47,6 +72,10 @@ class MoonWidget extends StatelessWidget {
     this.pixelSize = 1.0,
     this.moonColor = Colors.amber,
     this.earthshineColor = Colors.black87,
+    this.labelPosition,
+    this.phaseLabels,
+    this.labelStyle,
+    this.labelSpacing = 4.0,
   })  : backgroundImageAsset = null,
         shadowRatio = 1.0,
         super(key: key);
@@ -60,13 +89,15 @@ class MoonWidget extends StatelessWidget {
     this.pixelSize = 0.5,
     this.earthshineColor = Colors.black87,
     this.shadowRatio = 1.0,
+    this.labelPosition,
+    this.phaseLabels,
+    this.labelStyle,
+    this.labelSpacing = 4.0,
   })  : moonColor = Colors.amber,
         super(key: key);
 
-  @override
-  Widget build(BuildContext context) {
+  Widget _buildMoon() {
     final hasBackgroundImage = backgroundImageAsset != null;
-
     final moonPaint = CustomPaint(
       size: Size(size, size),
       painter: MoonPainter(moonWidget: this, shadowOnly: hasBackgroundImage),
@@ -98,5 +129,55 @@ class MoonWidget extends StatelessWidget {
       height: size,
       child: moonPaint,
     );
+  }
+
+  Widget _buildLabel() {
+    final angle = MoonPhase().getPhaseAngle(date);
+    final name = MoonPhaseNameX.fromAngle(angle);
+    final label =
+        (phaseLabels?[name]) ?? MoonPhaseNameX.defaultLabels[name]!;
+    return Text(label, style: labelStyle);
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final moon = _buildMoon();
+
+    if (labelPosition == null) return moon;
+
+    final label = _buildLabel();
+    final gap = SizedBox(
+      width: labelPosition == MoonLabelPosition.left ||
+              labelPosition == MoonLabelPosition.right
+          ? labelSpacing
+          : 0,
+      height: labelPosition == MoonLabelPosition.top ||
+              labelPosition == MoonLabelPosition.bottom
+          ? labelSpacing
+          : 0,
+    );
+
+    switch (labelPosition!) {
+      case MoonLabelPosition.top:
+        return Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [label, gap, moon],
+        );
+      case MoonLabelPosition.bottom:
+        return Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [moon, gap, label],
+        );
+      case MoonLabelPosition.left:
+        return Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [label, gap, moon],
+        );
+      case MoonLabelPosition.right:
+        return Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [moon, gap, label],
+        );
+    }
   }
 }
